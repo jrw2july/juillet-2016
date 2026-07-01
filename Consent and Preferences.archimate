@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<archimate:model xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:archimate="http://www.archimatetool.com/archimate" name="Consent and Preferences Diagrams" id="id-37974845088f448d9e36aef629ede7ef" version="5.0.0">
+  <folder name="Strategy" id="id-bf4a14373437490a957f2ad564ed1c66" type="strategy"/>
+  <folder name="Business" id="id-2457be16f6dd459e984e06f1a4281a42" type="business"/>
+  <folder name="Application" id="id-66dd7036a4ac4099a9ce57b97cc8c973" type="application"/>
+  <folder name="Technology &amp; Physical" id="id-ab9188212ee14b4f95c4ca688a43db53" type="technology"/>
+  <folder name="Motivation" id="id-72ef2ed8e9354d89b39d17c748999e21" type="motivation"/>
+  <folder name="Implementation &amp; Migration" id="id-0fdee903a9534dd3abc9f1b6ddeda820" type="implementation_migration"/>
+  <folder name="Other" id="id-aa0928b8e21a45c6995cdc63624156f6" type="other"/>
+  <folder name="Relations" id="id-65462bea275243d588d77d83e02b196a" type="relations"/>
+  <folder name="Views" id="id-c1f33a2a87c540a0be4c2fe096459a49" type="diagrams">
+    <element xsi:type="archimate:ArchimateDiagramModel" name="Default View" id="id-e9439dd77e6c46d8893e9dd4ba12cffe" viewpoint="capability"/>
+  </folder>
+  <purpose>Diagrams of intent, purpose, goals, and current architecture</purpose>
+</archimate:model>
