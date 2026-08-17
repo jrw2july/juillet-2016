@@ -1,0 +1,460 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model xmlns="http://www.opengroup.org/xsd/archimate/3.0/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.opengroup.org/xsd/archimate/3.0/ http://www.opengroup.org/xsd/archimate/3.1/archimate3_Diagram.xsd" identifier="id-6fafdc7aaa984f1f8f8cb080a3ffac56">
+  <name xml:lang="en">Trustpilot</name>
+  <elements>
+    <element identifier="id-daa828fb0c414c7ea4faab1927ffdfc4" xsi:type="BusinessActor">
+      <name xml:lang="en">Consumers / Public Users</name>
+      <documentation xml:lang="en">Read and submit reviews on Trustpilot.com</documentation>
+      <properties>
+        <property propertyDefinitionRef="propid-1">
+          <value xml:lang="en">Existing</value>
+        </property>
+        <property propertyDefinitionRef="propid-2">
+          <value xml:lang="en">Trustpilot</value>
+        </property>
+        <property propertyDefinitionRef="propid-3">
+          <value xml:lang="en">L0</value>
+        </property>
+      </properties>
+    </element>
+    <element identifier="id-6f62a7ecc2ec49aebf712f26d53acf84" xsi:type="BusinessActor">
+      <name xml:lang="en">Businesses / Review Invitees</name>
+      <documentation xml:lang="en">Invited to review CNO experiences</documentation>
+      <properties>
+        <property propertyDefinitionRef="propid-1">
+          <value xml:lang="en">Existing</value>
+        </property>
+        <property propertyDefinitionRef="propid-2">
+          <value xml:lang="en">Trustpilot</value>
+        </property>
+        <property propertyDefinitionRef="propid-3">
+          <value xml:lang="en">L0</value>
+        </property>
+      </properties>
+    </element>
+    <element identifier="id-e557867f5a19423ab2598d52b7e1f971" xsi:type="BusinessActor">
+      <name xml:lang="en">Business Users</name>
+      <documentation xml:lang="en">Sales Team C, Marketing, and CX Teams</documentation>
+      <properties>
+        <property propertyDefinitionRef="propid-1">
+          <value xml:lang="en">Modified</value>
+        </property>
+        <property propertyDefinitionRef="propid-2">
+          <value xml:lang="en">Trustpilot</value>
+        </property>
+        <property propertyDefinitionRef="propid-3">
+          <value xml:lang="en">L0</value>
+        </property>
+      </properties>
+    </element>
+    <element identifier="id-8c88174affbb413d85b597d79adeaa5d" xsi:type="ApplicationComponent">
+      <name xml:lang="en">Third-Party Websites</name>
+      <documentation xml:lang="en">Display Trustpilot widgets and review content</documentation>
+      <properties>
+        <property propertyDefinitionRef="propid-1">
+          <value xml:lang="en">Existing</value>
+        </property>
+        <property propertyDefinitionRef="propid-2">
+          <value xml:lang="en">Trustpilot</value>
+        </property>
+        <property propertyDefinitionRef="propid-3">
+          <value xml:lang="en">L0</value>
+        </property>
+      </properties>
+    </element>
+    <element identifier="id-372c5bc74ccd4052960269b68c1a09c7" xsi:type="ApplicationComponent">
+      <name xml:lang="en">Trustpilot Platform</name>
+      <documentation xml:lang="en">Collects and publishes customer reviews and ratings for CNO brands and products</documentation>
+      <properties>
+        <property propertyDefinitionRef="propid-1">
+          <value xml:lang="en">New</value>
+        </property>
+        <property propertyDefinitionRef="propid-2">
+          <value xml:lang="en">Trustpilot</value>
+        </property>
+        <property propertyDefinitionRef="propid-3">
+          <value xml:lang="en">L0</value>
+        </property>
+      </properties>
+    </element>
+    <element identifier="id-13a0d28f14b34b3eb2a9b88806c11658" xsi:type="ApplicationComponent">
+      <name xml:lang="en">CNO Applications</name>
+      <documentation xml:lang="en">Users, SSO, reporting, analytics, and integrations</documentation>
+      <properties>
+        <property propertyDefinitionRef="propid-1">
+          <value xml:lang="en">Modified</value>
+        </property>
+        <property propertyDefinitionRef="propid-2">
+          <value xml:lang="en">Trustpilot</value>
+        </property>
+        <property propertyDefinitionRef="propid-3">
+          <value xml:lang="en">L0</value>
+        </property>
+      </properties>
+    </element>
+    <element identifier="id-6a352926b9b84a7b9cb5588331a383b9" xsi:type="ApplicationComponent">
+      <name xml:lang="en">Azure AD (Entra ID)</name>
+      <documentation xml:lang="en">Corporate identity provider for SSO and SCIM</documentation>
+      <properties>
+        <property propertyDefinitionRef="propid-1">
+          <value xml:lang="en">Modified</value>
+        </property>
+        <property propertyDefinitionRef="propid-2">
+          <value xml:lang="en">Trustpilot</value>
+        </property>
+        <property propertyDefinitionRef="propid-3">
+          <value xml:lang="en">L0</value>
+        </property>
+      </properties>
+    </element>
+    <element identifier="id-fcaf80417c0d4f21b875bf970fc01467" xsi:type="ApplicationComponent">
+      <name xml:lang="en">Security / IAM</name>
+      <documentation xml:lang="en">Access governance and policy enforcement</documentation>
+      <properties>
+        <property propertyDefinitionRef="propid-1">
+          <value xml:lang="en">Existing</value>
+        </property>
+        <property propertyDefinitionRef="propid-2">
+          <value xml:lang="en">Trustpilot</value>
+        </property>
+        <property propertyDefinitionRef="propid-3">
+          <value xml:lang="en">L0</value>
+        </property>
+      </properties>
+    </element>
+    <element identifier="id-acd21f88a34243efb98f073a7ecaa821" xsi:type="ApplicationComponent">
+      <name xml:lang="en">CNO Data Systems</name>
+      <documentation xml:lang="en">Aggregated review insights export</documentation>
+      <properties>
+        <property propertyDefinitionRef="propid-1">
+          <value xml:lang="en">New</value>
+        </property>
+        <property propertyDefinitionRef="propid-2">
+          <value xml:lang="en">Trustpilot</value>
+        </property>
+        <property propertyDefinitionRef="propid-3">
+          <value xml:lang="en">L0</value>
+        </property>
+      </properties>
+    </element>
+    <element identifier="id-63274eb2db414a32aab37c1f026f2277" xsi:type="ApplicationComponent">
+      <name xml:lang="en">Other CNO Applications</name>
+      <documentation xml:lang="en">Future integrations as needed</documentation>
+      <properties>
+        <property propertyDefinitionRef="propid-1">
+          <value xml:lang="en">Existing</value>
+        </property>
+        <property propertyDefinitionRef="propid-2">
+          <value xml:lang="en">Trustpilot</value>
+        </property>
+        <property propertyDefinitionRef="propid-3">
+          <value xml:lang="en">L0</value>
+        </property>
+      </properties>
+    </element>
+    <element identifier="id-bde60bd9de604328a194f5143ddf4520" xsi:type="ApplicationFunction">
+      <name xml:lang="en">Analytics / Reporting</name>
+      <documentation xml:lang="en">Consume review metrics and insights</documentation>
+      <properties>
+        <property propertyDefinitionRef="propid-1">
+          <value xml:lang="en">New</value>
+        </property>
+        <property propertyDefinitionRef="propid-2">
+          <value xml:lang="en">Trustpilot</value>
+        </property>
+        <property propertyDefinitionRef="propid-3">
+          <value xml:lang="en">L0</value>
+        </property>
+      </properties>
+    </element>
+  </elements>
+  <relationships>
+    <relationship identifier="id-89a2cef92a3e4f1daf2565aa785d38ae" source="id-daa828fb0c414c7ea4faab1927ffdfc4" target="id-372c5bc74ccd4052960269b68c1a09c7" xsi:type="Association">
+      <name xml:lang="en">Access reviews / Submit reviews</name>
+      <documentation xml:lang="en">Access reviews / Submit reviews</documentation>
+      <properties>
+        <property propertyDefinitionRef="propid-2">
+          <value xml:lang="en">Trustpilot</value>
+        </property>
+        <property propertyDefinitionRef="propid-3">
+          <value xml:lang="en">L0</value>
+        </property>
+      </properties>
+    </relationship>
+    <relationship identifier="id-098b96c1f0b84e908c5ac9dc0b614800" source="id-6f62a7ecc2ec49aebf712f26d53acf84" target="id-372c5bc74ccd4052960269b68c1a09c7" xsi:type="Association">
+      <name xml:lang="en">Respond to review invitations via email</name>
+      <documentation xml:lang="en">Respond to review invitations via email</documentation>
+      <properties>
+        <property propertyDefinitionRef="propid-2">
+          <value xml:lang="en">Trustpilot</value>
+        </property>
+        <property propertyDefinitionRef="propid-3">
+          <value xml:lang="en">L0</value>
+        </property>
+      </properties>
+    </relationship>
+    <relationship identifier="id-aee78ce0bc664d5b9daa73fb617933de" source="id-372c5bc74ccd4052960269b68c1a09c7" target="id-8c88174affbb413d85b597d79adeaa5d" xsi:type="Association">
+      <name xml:lang="en">Embed widgets / Display reviews</name>
+      <documentation xml:lang="en">Embed widgets / Display reviews via API or JavaScript</documentation>
+      <properties>
+        <property propertyDefinitionRef="propid-2">
+          <value xml:lang="en">Trustpilot</value>
+        </property>
+        <property propertyDefinitionRef="propid-3">
+          <value xml:lang="en">L0</value>
+        </property>
+      </properties>
+    </relationship>
+    <relationship identifier="id-178697a83bd2442da2e2e5a99bda1022" source="id-e557867f5a19423ab2598d52b7e1f971" target="id-372c5bc74ccd4052960269b68c1a09c7" xsi:type="Association">
+      <name xml:lang="en">Access Platform UI</name>
+      <documentation xml:lang="en">Access Platform UI</documentation>
+      <properties>
+        <property propertyDefinitionRef="propid-2">
+          <value xml:lang="en">Trustpilot</value>
+        </property>
+        <property propertyDefinitionRef="propid-3">
+          <value xml:lang="en">L0</value>
+        </property>
+      </properties>
+    </relationship>
+    <relationship identifier="id-8648b85d04b04cf699ded06001c6a55e" source="id-372c5bc74ccd4052960269b68c1a09c7" target="id-13a0d28f14b34b3eb2a9b88806c11658" xsi:type="Association">
+      <name xml:lang="en">SSO Authentication / User Provisioning SCIM</name>
+      <documentation xml:lang="en">SSO Authentication / User Provisioning SCIM</documentation>
+      <properties>
+        <property propertyDefinitionRef="propid-2">
+          <value xml:lang="en">Trustpilot</value>
+        </property>
+        <property propertyDefinitionRef="propid-3">
+          <value xml:lang="en">L0</value>
+        </property>
+      </properties>
+    </relationship>
+    <relationship identifier="id-3386a20c013040448fc2ef2bbcfe6f5c" source="id-372c5bc74ccd4052960269b68c1a09c7" target="id-6a352926b9b84a7b9cb5588331a383b9" xsi:type="Association">
+      <name xml:lang="en">SSO Authentication / User Provisioning SCIM</name>
+      <documentation xml:lang="en">SSO Authentication / User Provisioning SCIM</documentation>
+      <properties>
+        <property propertyDefinitionRef="propid-2">
+          <value xml:lang="en">Trustpilot</value>
+        </property>
+        <property propertyDefinitionRef="propid-3">
+          <value xml:lang="en">L0</value>
+        </property>
+      </properties>
+    </relationship>
+    <relationship identifier="id-63f68718279e4e4b8693ea4222d0b88f" source="id-fcaf80417c0d4f21b875bf970fc01467" target="id-372c5bc74ccd4052960269b68c1a09c7" xsi:type="Association">
+      <name xml:lang="en">Access and Security Controls</name>
+      <documentation xml:lang="en">Access and Security Controls</documentation>
+      <properties>
+        <property propertyDefinitionRef="propid-2">
+          <value xml:lang="en">Trustpilot</value>
+        </property>
+        <property propertyDefinitionRef="propid-3">
+          <value xml:lang="en">L0</value>
+        </property>
+      </properties>
+    </relationship>
+    <relationship identifier="id-59485d76fc304ce1aeb48ea6277db8fc" source="id-372c5bc74ccd4052960269b68c1a09c7" target="id-acd21f88a34243efb98f073a7ecaa821" xsi:type="Association">
+      <name xml:lang="en">Review Data Export via API or Scheduled Export</name>
+      <documentation xml:lang="en">Review Data Export via API or Scheduled Export</documentation>
+      <properties>
+        <property propertyDefinitionRef="propid-2">
+          <value xml:lang="en">Trustpilot</value>
+        </property>
+        <property propertyDefinitionRef="propid-3">
+          <value xml:lang="en">L0</value>
+        </property>
+      </properties>
+    </relationship>
+    <relationship identifier="id-58d11245b216401186471775609020be" source="id-372c5bc74ccd4052960269b68c1a09c7" target="id-bde60bd9de604328a194f5143ddf4520" xsi:type="Association">
+      <name xml:lang="en">Metrics and Insights</name>
+      <documentation xml:lang="en">Metrics and Insights</documentation>
+      <properties>
+        <property propertyDefinitionRef="propid-2">
+          <value xml:lang="en">Trustpilot</value>
+        </property>
+        <property propertyDefinitionRef="propid-3">
+          <value xml:lang="en">L0</value>
+        </property>
+      </properties>
+    </relationship>
+    <relationship identifier="id-e239091b7851492093f436771cf8a913" source="id-372c5bc74ccd4052960269b68c1a09c7" target="id-63274eb2db414a32aab37c1f026f2277" xsi:type="Association">
+      <name xml:lang="en">Data / Integration Optional</name>
+      <documentation xml:lang="en">Data / Integration Optional</documentation>
+      <properties>
+        <property propertyDefinitionRef="propid-2">
+          <value xml:lang="en">Trustpilot</value>
+        </property>
+        <property propertyDefinitionRef="propid-3">
+          <value xml:lang="en">L0</value>
+        </property>
+      </properties>
+    </relationship>
+    <relationship identifier="id-f5785311fb3b4d2b9a2439157231ccc4" source="id-13a0d28f14b34b3eb2a9b88806c11658" target="id-6a352926b9b84a7b9cb5588331a383b9" xsi:type="Composition" />
+    <relationship identifier="id-54e3d1d41a814cb79dc7eee73a1e7ede" source="id-372c5bc74ccd4052960269b68c1a09c7" target="id-bde60bd9de604328a194f5143ddf4520" xsi:type="Association" />
+  </relationships>
+  <organizations>
+    <item>
+      <label xml:lang="en">Business</label>
+      <item identifierRef="id-daa828fb0c414c7ea4faab1927ffdfc4" />
+      <item identifierRef="id-6f62a7ecc2ec49aebf712f26d53acf84" />
+      <item identifierRef="id-e557867f5a19423ab2598d52b7e1f971" />
+    </item>
+    <item>
+      <label xml:lang="en">Application</label>
+      <item identifierRef="id-8c88174affbb413d85b597d79adeaa5d" />
+      <item identifierRef="id-372c5bc74ccd4052960269b68c1a09c7" />
+      <item identifierRef="id-13a0d28f14b34b3eb2a9b88806c11658" />
+      <item identifierRef="id-6a352926b9b84a7b9cb5588331a383b9" />
+      <item identifierRef="id-fcaf80417c0d4f21b875bf970fc01467" />
+      <item identifierRef="id-acd21f88a34243efb98f073a7ecaa821" />
+      <item identifierRef="id-63274eb2db414a32aab37c1f026f2277" />
+      <item identifierRef="id-bde60bd9de604328a194f5143ddf4520" />
+    </item>
+    <item>
+      <label xml:lang="en">Relations</label>
+      <item identifierRef="id-89a2cef92a3e4f1daf2565aa785d38ae" />
+      <item identifierRef="id-098b96c1f0b84e908c5ac9dc0b614800" />
+      <item identifierRef="id-aee78ce0bc664d5b9daa73fb617933de" />
+      <item identifierRef="id-178697a83bd2442da2e2e5a99bda1022" />
+      <item identifierRef="id-8648b85d04b04cf699ded06001c6a55e" />
+      <item identifierRef="id-3386a20c013040448fc2ef2bbcfe6f5c" />
+      <item identifierRef="id-63f68718279e4e4b8693ea4222d0b88f" />
+      <item identifierRef="id-59485d76fc304ce1aeb48ea6277db8fc" />
+      <item identifierRef="id-58d11245b216401186471775609020be" />
+      <item identifierRef="id-e239091b7851492093f436771cf8a913" />
+      <item identifierRef="id-f5785311fb3b4d2b9a2439157231ccc4" />
+      <item identifierRef="id-54e3d1d41a814cb79dc7eee73a1e7ede" />
+    </item>
+    <item>
+      <label xml:lang="en">Views</label>
+      <item identifierRef="id-21374dda17c94422a743eadbc53d889b" />
+      <item identifierRef="id-e108a6b5597c48a5b2b2b608ab40d36c" />
+    </item>
+  </organizations>
+  <propertyDefinitions>
+    <propertyDefinition identifier="propid-2" type="string">
+      <name>Acquisition Request</name>
+    </propertyDefinition>
+    <propertyDefinition identifier="propid-3" type="string">
+      <name>Diagram Level</name>
+    </propertyDefinition>
+    <propertyDefinition identifier="propid-1" type="string">
+      <name>Status</name>
+    </propertyDefinition>
+  </propertyDefinitions>
+  <views>
+    <diagrams>
+      <view identifier="id-21374dda17c94422a743eadbc53d889b" xsi:type="Diagram">
+        <name xml:lang="en">Default View</name>
+      </view>
+      <view identifier="id-e108a6b5597c48a5b2b2b608ab40d36c" xsi:type="Diagram">
+        <name xml:lang="en">Trustpilot Acquisition Request L0</name>
+        <node identifier="id-da5a554c02bc48e286c8b0ff8cd7a363" elementRef="id-daa828fb0c414c7ea4faab1927ffdfc4" xsi:type="Element" x="150" y="204" w="144" h="36">
+          <style>
+            <fillColor r="255" g="255" b="128" a="100" />
+            <lineColor r="34" g="34" b="34" a="100" />
+            <font name="Segoe UI" size="9">
+              <color r="17" g="17" b="17" />
+            </font>
+          </style>
+        </node>
+        <node identifier="id-888d22fd38be4c5d84d19440095c94a5" elementRef="id-6f62a7ecc2ec49aebf712f26d53acf84" xsi:type="Element" x="150" y="288" w="144" h="40">
+          <style>
+            <fillColor r="255" g="255" b="128" a="100" />
+            <lineColor r="34" g="34" b="34" a="100" />
+            <font name="Segoe UI" size="9">
+              <color r="17" g="17" b="17" />
+            </font>
+          </style>
+        </node>
+        <node identifier="id-451e2891b9274a19a765ceea8ce8dba4" elementRef="id-8c88174affbb413d85b597d79adeaa5d" xsi:type="Element" x="144" y="371" w="156" h="50">
+          <style>
+            <fillColor r="255" g="255" b="255" a="100" />
+            <lineColor r="34" g="34" b="34" a="100" />
+            <font name="Segoe UI" size="9">
+              <color r="17" g="17" b="17" />
+            </font>
+          </style>
+        </node>
+        <node identifier="id-bda98360953d427baa62b0e85b7c5370" elementRef="id-e557867f5a19423ab2598d52b7e1f971" xsi:type="Element" x="147" y="456" w="150" h="57">
+          <style>
+            <fillColor r="232" g="245" b="228" a="100" />
+            <lineColor r="34" g="34" b="34" a="100" />
+            <font name="Segoe UI" size="9">
+              <color r="17" g="17" b="17" />
+            </font>
+          </style>
+        </node>
+        <node identifier="id-6a3b04d96fbc4159a6f7896cafdd4d74" elementRef="id-372c5bc74ccd4052960269b68c1a09c7" xsi:type="Element" x="520" y="276" w="177" h="133">
+          <style>
+            <fillColor r="252" g="228" b="228" a="100" />
+            <lineColor r="34" g="34" b="34" a="100" />
+            <font name="Segoe UI" size="9">
+              <color r="17" g="17" b="17" />
+            </font>
+          </style>
+          <node identifier="id-775726dc257d4893a3e30a9b052340d4" elementRef="id-bde60bd9de604328a194f5143ddf4520" xsi:type="Element" x="556" y="324" w="121" h="49">
+            <style>
+              <fillColor r="181" g="255" b="255" a="100" />
+              <lineColor r="92" g="92" b="92" a="100" />
+              <font name="Segoe UI" size="9">
+                <color r="0" g="0" b="0" />
+              </font>
+            </style>
+          </node>
+        </node>
+        <node identifier="id-d981f387cd584efb89e7b96c2cf04c2d" elementRef="id-6a352926b9b84a7b9cb5588331a383b9" xsi:type="Element" x="524" y="492" w="169" h="55">
+          <style>
+            <fillColor r="181" g="255" b="255" a="100" />
+            <lineColor r="92" g="92" b="92" a="100" />
+            <font name="Segoe UI" size="9">
+              <color r="0" g="0" b="0" />
+            </font>
+          </style>
+        </node>
+        <connection identifier="id-ccad777a985a4823a3f37abc3f11c905" relationshipRef="id-89a2cef92a3e4f1daf2565aa785d38ae" xsi:type="Relationship" source="id-da5a554c02bc48e286c8b0ff8cd7a363" target="id-6a3b04d96fbc4159a6f7896cafdd4d74">
+          <style>
+            <lineColor r="34" g="34" b="34" />
+            <font name="Segoe UI" size="9">
+              <color r="17" g="17" b="17" />
+            </font>
+          </style>
+          <bendpoint x="612" y="216" />
+        </connection>
+        <connection identifier="id-b4e36f507be442a29a967da3588ed4e9" relationshipRef="id-098b96c1f0b84e908c5ac9dc0b614800" xsi:type="Relationship" source="id-888d22fd38be4c5d84d19440095c94a5" target="id-6a3b04d96fbc4159a6f7896cafdd4d74">
+          <style>
+            <lineColor r="34" g="34" b="34" />
+            <font name="Segoe UI" size="9">
+              <color r="17" g="17" b="17" />
+            </font>
+          </style>
+        </connection>
+        <connection identifier="id-260e5cdc2441436eaafd81ab07325acc" relationshipRef="id-178697a83bd2442da2e2e5a99bda1022" xsi:type="Relationship" source="id-bda98360953d427baa62b0e85b7c5370" target="id-6a3b04d96fbc4159a6f7896cafdd4d74">
+          <style>
+            <lineColor r="34" g="34" b="34" />
+            <font name="Segoe UI" size="9">
+              <color r="17" g="17" b="17" />
+            </font>
+          </style>
+          <bendpoint x="432" y="492" />
+        </connection>
+        <connection identifier="id-91f5bf4b6e364555809993a7126d19ae" relationshipRef="id-aee78ce0bc664d5b9daa73fb617933de" xsi:type="Relationship" source="id-6a3b04d96fbc4159a6f7896cafdd4d74" target="id-451e2891b9274a19a765ceea8ce8dba4">
+          <style>
+            <lineColor r="34" g="34" b="34" />
+            <font name="Segoe UI" size="9">
+              <color r="17" g="17" b="17" />
+            </font>
+          </style>
+        </connection>
+        <connection identifier="id-dedccd21b8a6453f9261bca53f647316" relationshipRef="id-3386a20c013040448fc2ef2bbcfe6f5c" xsi:type="Relationship" source="id-6a3b04d96fbc4159a6f7896cafdd4d74" target="id-d981f387cd584efb89e7b96c2cf04c2d">
+          <style>
+            <lineColor r="0" g="0" b="0" />
+            <font name="Segoe UI" size="9">
+              <color r="0" g="0" b="0" />
+            </font>
+          </style>
+        </connection>
+      </view>
+    </diagrams>
+  </views>
+</model>

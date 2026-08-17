@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<archimate:model xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:archimate="http://www.archimatetool.com/archimate" name="FuseMind LeadForce Pro" id="id-287022f8502e4261bed45150c565bf66" version="5.0.0">
+  <folder name="Strategy" id="id-25ef4a6961694af9a721fc61fece0107" type="strategy"/>
+  <folder name="Business" id="id-c45d430213904828909184e27f571fa3" type="business"/>
+  <folder name="Application" id="id-731af37bc74d45cd89b5e66c4d43f923" type="application"/>
+  <folder name="Technology &amp; Physical" id="id-4aac855ae6844ee18e9f6cb054cb7c4d" type="technology"/>
+  <folder name="Motivation" id="id-46e5b7615e024e718a40701754afbbcb" type="motivation"/>
+  <folder name="Implementation &amp; Migration" id="id-408d9bf298af443cb0eb780eff006864" type="implementation_migration"/>
+  <folder name="Other" id="id-a087e427d6414a09844d4b48cd6622b9" type="other"/>
+  <folder name="Relations" id="id-8815b6d1e8434a1c8d47df69ad30cd2a" type="relations"/>
+  <folder name="Views" id="id-bbd55ec57bd342358be3ea11f0c62088" type="diagrams">
+    <element xsi:type="archimate:ArchimateDiagramModel" name="Default View" id="id-9bbb9dfcc4874c2aab07e1c6b03dd44c"/>
+  </folder>
+</archimate:model>

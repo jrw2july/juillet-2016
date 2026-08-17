@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<archimate:model xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:archimate="http://www.archimatetool.com/archimate" name="Trustpilot" id="id-6fafdc7aaa984f1f8f8cb080a3ffac56" version="5.0.0">
+  <folder name="Strategy" id="id-6e8829ebf200496288241ff3b85ec613" type="strategy"/>
+  <folder name="Business" id="id-07c177d94f5f47119fa0fe1121b48810" type="business"/>
+  <folder name="Application" id="id-688698b0c2854b0d9f13cdaefa93e4f1" type="application"/>
+  <folder name="Technology &amp; Physical" id="id-087e8229d3b64cf6bbd51ddf06c20052" type="technology"/>
+  <folder name="Motivation" id="id-efc6da5daa87401d8c6969557e715a4b" type="motivation"/>
+  <folder name="Implementation &amp; Migration" id="id-e4f63cdf52b74ac0ac6e0cc777b552f5" type="implementation_migration"/>
+  <folder name="Other" id="id-96d955b23b394311b5c753f99a62ce34" type="other"/>
+  <folder name="Relations" id="id-9ef378cf0ba24929b2d9ccda71dd3cfd" type="relations"/>
+  <folder name="Views" id="id-d9e176385f8a40f19b6d6cd790d2ae7b" type="diagrams">
+    <element xsi:type="archimate:ArchimateDiagramModel" name="Default View" id="id-21374dda17c94422a743eadbc53d889b"/>
+  </folder>
+</archimate:model>

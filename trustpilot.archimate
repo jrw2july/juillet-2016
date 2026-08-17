@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<archimate:model xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:archimate="http://www.archimatetool.com/archimate" name="Trustpilot" id="id-6fafdc7aaa984f1f8f8cb080a3ffac56" version="5.0.0">
+  <folder name="Strategy" id="id-6e8829ebf200496288241ff3b85ec613" type="strategy"/>
+  <folder name="Business" id="id-07c177d94f5f47119fa0fe1121b48810" type="business">
+    <element xsi:type="archimate:BusinessActor" name="Consumers / Public Users" id="id-daa828fb0c414c7ea4faab1927ffdfc4">
+      <documentation>Read and submit reviews on Trustpilot.com</documentation>
+      <property key="Status" value="Existing"/>
+      <property key="Acquisition Request" value="Trustpilot"/>
+      <property key="Diagram Level" value="L0"/>
+    </element>
+    <element xsi:type="archimate:BusinessActor" name="Businesses / Review Invitees" id="id-6f62a7ecc2ec49aebf712f26d53acf84">
+      <documentation>Invited to review CNO experiences</documentation>
+      <property key="Status" value="Existing"/>
+      <property key="Acquisition Request" value="Trustpilot"/>
+      <property key="Diagram Level" value="L0"/>
+    </element>
+    <element xsi:type="archimate:BusinessActor" name="Business Users" id="id-e557867f5a19423ab2598d52b7e1f971">
+      <documentation>Sales Team C, Marketing, and CX Teams</documentation>
+      <property key="Status" value="Modified"/>
+      <property key="Acquisition Request" value="Trustpilot"/>
+      <property key="Diagram Level" value="L0"/>
+    </element>
+  </folder>
+  <folder name="Application" id="id-688698b0c2854b0d9f13cdaefa93e4f1" type="application">
+    <element xsi:type="archimate:ApplicationComponent" name="Third-Party Websites" id="id-8c88174affbb413d85b597d79adeaa5d">
+      <documentation>Display Trustpilot widgets and review content</documentation>
+      <property key="Status" value="Existing"/>
+      <property key="Acquisition Request" value="Trustpilot"/>
+      <property key="Diagram Level" value="L0"/>
+    </element>
+    <element xsi:type="archimate:ApplicationComponent" name="Trustpilot Platform" id="id-372c5bc74ccd4052960269b68c1a09c7">
+      <documentation>Collects and publishes customer reviews and ratings for CNO brands and products</documentation>
+      <property key="Status" value="New"/>
+      <property key="Acquisition Request" value="Trustpilot"/>
+      <property key="Diagram Level" value="L0"/>
+    </element>
+    <element xsi:type="archimate:ApplicationComponent" name="CNO Applications" id="id-13a0d28f14b34b3eb2a9b88806c11658">
+      <documentation>Users, SSO, reporting, analytics, and integrations</documentation>
+      <property key="Status" value="Modified"/>
+      <property key="Acquisition Request" value="Trustpilot"/>
+      <property key="Diagram Level" value="L0"/>
+    </element>
+    <element xsi:type="archimate:ApplicationComponent" name="Azure AD (Entra ID)" id="id-6a352926b9b84a7b9cb5588331a383b9">
+      <documentation>Corporate identity provider for SSO and SCIM</documentation>
+      <property key="Status" value="Modified"/>
+      <property key="Acquisition Request" value="Trustpilot"/>
+      <property key="Diagram Level" value="L0"/>
+    </element>
+    <element xsi:type="archimate:ApplicationComponent" name="Security / IAM" id="id-fcaf80417c0d4f21b875bf970fc01467">
+      <documentation>Access governance and policy enforcement</documentation>
+      <property key="Status" value="Existing"/>
+      <property key="Acquisition Request" value="Trustpilot"/>
+      <property key="Diagram Level" value="L0"/>
+    </element>
+    <element xsi:type="archimate:ApplicationComponent" name="CNO Data Systems" id="id-acd21f88a34243efb98f073a7ecaa821">
+      <documentation>Aggregated review insights export</documentation>
+      <property key="Status" value="New"/>
+      <property key="Acquisition Request" value="Trustpilot"/>
+      <property key="Diagram Level" value="L0"/>
+    </element>
+    <element xsi:type="archimate:ApplicationComponent" name="Other CNO Applications" id="id-63274eb2db414a32aab37c1f026f2277">
+      <documentation>Future integrations as needed</documentation>
+      <property key="Status" value="Existing"/>
+      <property key="Acquisition Request" value="Trustpilot"/>
+      <property key="Diagram Level" value="L0"/>
+    </element>
+    <element xsi:type="archimate:ApplicationFunction" name="Analytics / Reporting" id="id-bde60bd9de604328a194f5143ddf4520">
+      <documentation>Consume review metrics and insights</documentation>
+      <property key="Status" value="New"/>
+      <property key="Acquisition Request" value="Trustpilot"/>
+      <property key="Diagram Level" value="L0"/>
+    </element>
+  </folder>
+  <folder name="Technology &amp; Physical" id="id-087e8229d3b64cf6bbd51ddf06c20052" type="technology"/>
+  <folder name="Motivation" id="id-efc6da5daa87401d8c6969557e715a4b" type="motivation"/>
+  <folder name="Implementation &amp; Migration" id="id-e4f63cdf52b74ac0ac6e0cc777b552f5" type="implementation_migration"/>
+  <folder name="Other" id="id-96d955b23b394311b5c753f99a62ce34" type="other"/>
+  <folder name="Relations" id="id-9ef378cf0ba24929b2d9ccda71dd3cfd" type="relations">
+    <element xsi:type="archimate:AssociationRelationship" name="Access reviews / Submit reviews" id="id-89a2cef92a3e4f1daf2565aa785d38ae" source="id-daa828fb0c414c7ea4faab1927ffdfc4" target="id-372c5bc74ccd4052960269b68c1a09c7">
+      <documentation>Access reviews / Submit reviews</documentation>
+      <property key="Acquisition Request" value="Trustpilot"/>
+      <property key="Diagram Level" value="L0"/>
+    </element>
+    <element xsi:type="archimate:AssociationRelationship" name="Respond to review invitations via email" id="id-098b96c1f0b84e908c5ac9dc0b614800" source="id-6f62a7ecc2ec49aebf712f26d53acf84" target="id-372c5bc74ccd4052960269b68c1a09c7">
+      <documentation>Respond to review invitations via email</documentation>
+      <property key="Acquisition Request" value="Trustpilot"/>
+      <property key="Diagram Level" value="L0"/>
+    </element>
+    <element xsi:type="archimate:AssociationRelationship" name="Embed widgets / Display reviews" id="id-aee78ce0bc664d5b9daa73fb617933de" source="id-372c5bc74ccd4052960269b68c1a09c7" target="id-8c88174affbb413d85b597d79adeaa5d">
+      <documentation>Embed widgets / Display reviews via API or JavaScript</documentation>
+      <property key="Acquisition Request" value="Trustpilot"/>
+      <property key="Diagram Level" value="L0"/>
+    </element>
+    <element xsi:type="archimate:AssociationRelationship" name="Access Platform UI" id="id-178697a83bd2442da2e2e5a99bda1022" source="id-e557867f5a19423ab2598d52b7e1f971" target="id-372c5bc74ccd4052960269b68c1a09c7">
+      <documentation>Access Platform UI</documentation>
+      <property key="Acquisition Request" value="Trustpilot"/>
+      <property key="Diagram Level" value="L0"/>
+    </element>
+    <element xsi:type="archimate:AssociationRelationship" name="SSO Authentication / User Provisioning SCIM" id="id-8648b85d04b04cf699ded06001c6a55e" source="id-372c5bc74ccd4052960269b68c1a09c7" target="id-13a0d28f14b34b3eb2a9b88806c11658">
+      <documentation>SSO Authentication / User Provisioning SCIM</documentation>
+      <property key="Acquisition Request" value="Trustpilot"/>
+      <property key="Diagram Level" value="L0"/>
+    </element>
+    <element xsi:type="archimate:AssociationRelationship" name="SSO Authentication / User Provisioning SCIM" id="id-3386a20c013040448fc2ef2bbcfe6f5c" source="id-372c5bc74ccd4052960269b68c1a09c7" target="id-6a352926b9b84a7b9cb5588331a383b9">
+      <documentation>SSO Authentication / User Provisioning SCIM</documentation>
+      <property key="Acquisition Request" value="Trustpilot"/>
+      <property key="Diagram Level" value="L0"/>
+    </element>
+    <element xsi:type="archimate:AssociationRelationship" name="Access and Security Controls" id="id-63f68718279e4e4b8693ea4222d0b88f" source="id-fcaf80417c0d4f21b875bf970fc01467" target="id-372c5bc74ccd4052960269b68c1a09c7">
+      <documentation>Access and Security Controls</documentation>
+      <property key="Acquisition Request" value="Trustpilot"/>
+      <property key="Diagram Level" value="L0"/>
+    </element>
+    <element xsi:type="archimate:AssociationRelationship" name="Review Data Export via API or Scheduled Export" id="id-59485d76fc304ce1aeb48ea6277db8fc" source="id-372c5bc74ccd4052960269b68c1a09c7" target="id-acd21f88a34243efb98f073a7ecaa821">
+      <documentation>Review Data Export via API or Scheduled Export</documentation>
+      <property key="Acquisition Request" value="Trustpilot"/>
+      <property key="Diagram Level" value="L0"/>
+    </element>
+    <element xsi:type="archimate:AssociationRelationship" name="Metrics and Insights" id="id-58d11245b216401186471775609020be" source="id-372c5bc74ccd4052960269b68c1a09c7" target="id-bde60bd9de604328a194f5143ddf4520">
+      <documentation>Metrics and Insights</documentation>
+      <property key="Acquisition Request" value="Trustpilot"/>
+      <property key="Diagram Level" value="L0"/>
+    </element>
+    <element xsi:type="archimate:AssociationRelationship" name="Data / Integration Optional" id="id-e239091b7851492093f436771cf8a913" source="id-372c5bc74ccd4052960269b68c1a09c7" target="id-63274eb2db414a32aab37c1f026f2277">
+      <documentation>Data / Integration Optional</documentation>
+      <property key="Acquisition Request" value="Trustpilot"/>
+      <property key="Diagram Level" value="L0"/>
+    </element>
+    <element xsi:type="archimate:CompositionRelationship" id="id-f5785311fb3b4d2b9a2439157231ccc4" source="id-13a0d28f14b34b3eb2a9b88806c11658" target="id-6a352926b9b84a7b9cb5588331a383b9"/>
+    <element xsi:type="archimate:AssociationRelationship" id="id-54e3d1d41a814cb79dc7eee73a1e7ede" source="id-372c5bc74ccd4052960269b68c1a09c7" target="id-bde60bd9de604328a194f5143ddf4520"/>
+  </folder>
+  <folder name="Views" id="id-d9e176385f8a40f19b6d6cd790d2ae7b" type="diagrams">
+    <element xsi:type="archimate:ArchimateDiagramModel" name="Default View" id="id-21374dda17c94422a743eadbc53d889b"/>
+    <element xsi:type="archimate:ArchimateDiagramModel" name="Trustpilot Acquisition Request L0" id="id-e108a6b5597c48a5b2b2b608ab40d36c">
+      <child xsi:type="archimate:DiagramObject" id="id-da5a554c02bc48e286c8b0ff8cd7a363" fontColor="#111111" lineColor="#222222" fillColor="#ffff80" archimateElement="id-daa828fb0c414c7ea4faab1927ffdfc4">
+        <bounds x="150" y="204" width="144" height="36"/>
+        <feature name="labelExpression" value="Consumers / &#xD;&#xA;Public Users"/>
+        <sourceConnection xsi:type="archimate:Connection" id="id-ccad777a985a4823a3f37abc3f11c905" fontColor="#111111" lineColor="#222222" source="id-da5a554c02bc48e286c8b0ff8cd7a363" target="id-6a3b04d96fbc4159a6f7896cafdd4d74" archimateRelationship="id-89a2cef92a3e4f1daf2565aa785d38ae">
+          <bendpoint startX="390" startY="-6" endX="4" endY="-126"/>
+        </sourceConnection>
+      </child>
+      <child xsi:type="archimate:DiagramObject" id="id-888d22fd38be4c5d84d19440095c94a5" fontColor="#111111" lineColor="#222222" fillColor="#ffff80" archimateElement="id-6f62a7ecc2ec49aebf712f26d53acf84">
+        <bounds x="150" y="288" width="144" height="40"/>
+        <feature name="labelExpression" value="Businesses / &#xD;&#xA;Review Invitees"/>
+        <sourceConnection xsi:type="archimate:Connection" id="id-b4e36f507be442a29a967da3588ed4e9" fontColor="#111111" lineColor="#222222" source="id-888d22fd38be4c5d84d19440095c94a5" target="id-6a3b04d96fbc4159a6f7896cafdd4d74" archimateRelationship="id-098b96c1f0b84e908c5ac9dc0b614800"/>
+      </child>
+      <child xsi:type="archimate:DiagramObject" id="id-451e2891b9274a19a765ceea8ce8dba4" targetConnections="id-91f5bf4b6e364555809993a7126d19ae" fontColor="#111111" lineColor="#222222" fillColor="#FFFFFF" archimateElement="id-8c88174affbb413d85b597d79adeaa5d" type="1">
+        <bounds x="144" y="371" width="156" height="50"/>
+      </child>
+      <child xsi:type="archimate:DiagramObject" id="id-bda98360953d427baa62b0e85b7c5370" fontColor="#111111" lineColor="#222222" fillColor="#E8F5E4" archimateElement="id-e557867f5a19423ab2598d52b7e1f971" type="1">
+        <bounds x="147" y="456" width="150" height="57"/>
+        <sourceConnection xsi:type="archimate:Connection" id="id-260e5cdc2441436eaafd81ab07325acc" fontColor="#111111" lineColor="#222222" source="id-bda98360953d427baa62b0e85b7c5370" target="id-6a3b04d96fbc4159a6f7896cafdd4d74" archimateRelationship="id-178697a83bd2442da2e2e5a99bda1022">
+          <bendpoint startX="210" startY="8" endX="-176" endY="150"/>
+        </sourceConnection>
+      </child>
+      <child xsi:type="archimate:DiagramObject" id="id-6a3b04d96fbc4159a6f7896cafdd4d74" targetConnections="id-ccad777a985a4823a3f37abc3f11c905 id-b4e36f507be442a29a967da3588ed4e9 id-260e5cdc2441436eaafd81ab07325acc" fontColor="#111111" lineColor="#222222" fillColor="#FCE4E4" archimateElement="id-372c5bc74ccd4052960269b68c1a09c7" type="1">
+        <bounds x="520" y="276" width="177" height="133"/>
+        <feature name="labelExpression" value="Trustpilot&#xD;&#xA;&lt;&lt;SaaS Application>>"/>
+        <sourceConnection xsi:type="archimate:Connection" id="id-91f5bf4b6e364555809993a7126d19ae" fontColor="#111111" lineColor="#222222" source="id-6a3b04d96fbc4159a6f7896cafdd4d74" target="id-451e2891b9274a19a765ceea8ce8dba4" archimateRelationship="id-aee78ce0bc664d5b9daa73fb617933de">
+          <feature name="labelExpression" value="Embed widgets / &#xD;&#xA;Display reviews via &#xD;&#xA;API or JavaScript"/>
+        </sourceConnection>
+        <sourceConnection xsi:type="archimate:Connection" id="id-dedccd21b8a6453f9261bca53f647316" source="id-6a3b04d96fbc4159a6f7896cafdd4d74" target="id-d981f387cd584efb89e7b96c2cf04c2d" archimateRelationship="id-3386a20c013040448fc2ef2bbcfe6f5c">
+          <feature name="labelExpression" value="SSO Authentication / &#xD;&#xA;User Provisioning SCIM"/>
+        </sourceConnection>
+        <sourceConnection xsi:type="archimate:Connection" id="id-aa2955e75cf64d2f89e684e32d9e7013" source="id-6a3b04d96fbc4159a6f7896cafdd4d74" target="id-775726dc257d4893a3e30a9b052340d4" archimateRelationship="id-58d11245b216401186471775609020be"/>
+        <sourceConnection xsi:type="archimate:Connection" id="id-b627804b06d54af6bc23f26644f783a7" source="id-6a3b04d96fbc4159a6f7896cafdd4d74" target="id-775726dc257d4893a3e30a9b052340d4" archimateRelationship="id-54e3d1d41a814cb79dc7eee73a1e7ede"/>
+        <child xsi:type="archimate:DiagramObject" id="id-775726dc257d4893a3e30a9b052340d4" targetConnections="id-aa2955e75cf64d2f89e684e32d9e7013 id-b627804b06d54af6bc23f26644f783a7" archimateElement="id-bde60bd9de604328a194f5143ddf4520">
+          <bounds x="36" y="48" width="121" height="49"/>
+        </child>
+      </child>
+      <child xsi:type="archimate:DiagramObject" id="id-d981f387cd584efb89e7b96c2cf04c2d" targetConnections="id-dedccd21b8a6453f9261bca53f647316" archimateElement="id-6a352926b9b84a7b9cb5588331a383b9" type="1">
+        <bounds x="524" y="492" width="169" height="55"/>
+        <feature name="labelExpression" value="CNO Entra SSO&#xD;&#xA;&lt;&lt;Identity Service>>"/>
+      </child>
+    </element>
+  </folder>
+</archimate:model>
