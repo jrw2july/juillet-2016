@@ -1,15 +1,212 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<archimate:model xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:archimate="http://www.archimatetool.com/archimate" name="Consent and Preferences Diagrams" id="id-37974845088f448d9e36aef629ede7ef" version="5.0.0">
-  <folder name="Strategy" id="id-bf4a14373437490a957f2ad564ed1c66" type="strategy"/>
-  <folder name="Business" id="id-2457be16f6dd459e984e06f1a4281a42" type="business"/>
-  <folder name="Application" id="id-66dd7036a4ac4099a9ce57b97cc8c973" type="application"/>
-  <folder name="Technology &amp; Physical" id="id-ab9188212ee14b4f95c4ca688a43db53" type="technology"/>
-  <folder name="Motivation" id="id-72ef2ed8e9354d89b39d17c748999e21" type="motivation"/>
-  <folder name="Implementation &amp; Migration" id="id-0fdee903a9534dd3abc9f1b6ddeda820" type="implementation_migration"/>
-  <folder name="Other" id="id-aa0928b8e21a45c6995cdc63624156f6" type="other"/>
-  <folder name="Relations" id="id-65462bea275243d588d77d83e02b196a" type="relations"/>
-  <folder name="Views" id="id-c1f33a2a87c540a0be4c2fe096459a49" type="diagrams">
-    <element xsi:type="archimate:ArchimateDiagramModel" name="Default View" id="id-e9439dd77e6c46d8893e9dd4ba12cffe" viewpoint="capability"/>
+<archimate:model xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:archimate="http://www.archimatetool.com/archimate" name="CX Hub — Consent and Preferences (L1)" id="id-45811514fcab4f3c982001b1395a0770" version="5.0.0">
+  <folder name="Strategy" id="id-c22358add83e4ffd93d516423b11a6dc" type="strategy"/>
+  <folder name="Business" id="id-7277369289a246c6b613edc2f38509af" type="business"/>
+  <folder name="Application" id="id-7e03d65d3df34dd58762bbedd101c713" type="application">
+    <element xsi:type="archimate:ApplicationComponent" name="Customer channels" id="id-510f0dfbc2584b5d859751e9477e7a2f">
+      <documentation>Web, email and SMS touchpoints that initiate consent or preference activity.</documentation>
+    </element>
+    <element xsi:type="archimate:ApplicationComponent" name="Agent channels" id="id-4dca98d3142c4c9497283c0f5dc5e005">
+      <documentation>C3 and Agent CRM. Submit agent-captured consent and preference outcomes.</documentation>
+    </element>
+    <element xsi:type="archimate:ApplicationComponent" name="Campaign systems" id="id-370a6bf301d444f5961903e5d7ce0b88">
+      <documentation>Customer and lead engagement platforms issuing outbound communications.</documentation>
+    </element>
+    <element xsi:type="archimate:ApplicationComponent" name="Preference center" id="id-0495e974215149239cda8526a1f59e5d">
+      <documentation>Phase 2 only. Sitecore-hosted self-service portal on colonialpenn.com.</documentation>
+    </element>
+    <element xsi:type="archimate:ApplicationComponent" name="Preference APIs" id="id-94181af3c3d646d4abab2c42a5a75877">
+      <documentation>Mediates all preference reads and writes. MuleSoft at L2.</documentation>
+    </element>
+    <element xsi:type="archimate:ApplicationComponent" name="Consent receipt" id="id-a928aac0958c4a0d875816a5e4a1da01">
+      <documentation>Capture of agent-originated consent outcomes via the existing pattern.</documentation>
+    </element>
+    <element xsi:type="archimate:ApplicationComponent" name="Access token issuance" id="id-3cc9143e41bc4bf899522e18aa6d0c3f">
+      <documentation>Phase 2 only. Issues short-lived tokens scoped to a customer party record.</documentation>
+    </element>
+    <element xsi:type="archimate:ApplicationComponent" name="EODS" id="id-1dfa21a6f3ee410eac2d1028970484f4">
+      <documentation>Designated single system of record for consent and preference data.</documentation>
+    </element>
+    <element xsi:type="archimate:DataObject" name="Party and policy data" id="id-5c5eb6132d504a7884f4bcddf1ca10d9">
+      <documentation>Customer master data and related identifiers held in EODS.</documentation>
+    </element>
+    <element xsi:type="archimate:DataObject" name="Party preference data" id="id-9106267194a54aa2be659f23c0f57a0b">
+      <documentation>Consent and preference state. EODS is the system of record.</documentation>
+    </element>
+    <element xsi:type="archimate:DataObject" name="Token and audit data" id="id-cae2d0d87489435d9557292f04184410">
+      <documentation>Phase 2 only. Token and TTL persisted with the party object, plus audit history.</documentation>
+    </element>
+    <element xsi:type="archimate:ApplicationComponent" name="Epsilon CDP" id="id-d702edaa2e774c898a889a0f1a558d63">
+      <documentation>Apollo. Identity resolution when CNOPartyID is not available.</documentation>
+    </element>
+    <element xsi:type="archimate:ApplicationComponent" name="Marketing analytics" id="id-85e09eb6a88748b0a2fe8bdb18b36100">
+      <documentation>Downstream marketing reads via existing batch ETL into Snowflake.</documentation>
+    </element>
+    <element xsi:type="archimate:ApplicationComponent" name="OneTrust" id="id-ad240338b96340ffa089772a37720f2f">
+      <documentation>Out of scope in the target state. Removal is the driver for this initiative.</documentation>
+    </element>
   </folder>
-  <purpose>Diagrams of intent, purpose, goals, and current architecture</purpose>
+  <folder name="Technology &amp; Physical" id="id-c837dafe3f5f4003b66a6e59f05b70a0" type="technology"/>
+  <folder name="Motivation" id="id-f032b39f6a0c4cc79df80fdf4f003ad7" type="motivation">
+    <element xsi:type="archimate:Assessment" name="entprs-consentpref-eapi" id="id-c9f58debf0524c9386e0e072e9bb28d4">
+      <documentation>Re-point or decommission. Unresolved in the source deck.</documentation>
+    </element>
+    <element xsi:type="archimate:Assessment" name="getCnoPartyId null path" id="id-ebf20b0a50044b4f815c3ca8c1a0d972">
+      <documentation>Behaviour when Service ID is null is unresolved in the source deck.</documentation>
+    </element>
+    <element xsi:type="archimate:Assessment" name="Consent receipt future" id="id-320f623ac6f449a489add1c77e685201">
+      <documentation>Whether the pattern is still required once self-service exists.</documentation>
+    </element>
+    <element xsi:type="archimate:Assessment" name="Token and audit ownership" id="id-588b7cac4d03439eb4746e547b7e3dbc">
+      <documentation>Deck states token and TTL persist with the party object in EODS.</documentation>
+    </element>
+  </folder>
+  <folder name="Implementation &amp; Migration" id="id-da09ccfe47cc453e8b1c26d06af8f838" type="implementation_migration"/>
+  <folder name="Other" id="id-07c1261f32c7461695cc101f9f25b91b" type="other">
+    <element xsi:type="archimate:Grouping" name="Engagement channels" id="id-9a4624fe4a314103b3b02ebfbde67952"/>
+    <element xsi:type="archimate:Grouping" name="Integration layer" id="id-f8a81d134a3e48f98d9603d3421137d0"/>
+    <element xsi:type="archimate:Grouping" name="Data and identity" id="id-42d8afd459e548a997db20059c0c71fe"/>
+  </folder>
+  <folder name="Relations" id="id-e7c71f37939b4db5a026fc0149fb6859" type="relations">
+    <element xsi:type="archimate:FlowRelationship" name="Preference activity" id="id-0e354520af7e48249558b38da010cc28" source="id-510f0dfbc2584b5d859751e9477e7a2f" target="id-94181af3c3d646d4abab2c42a5a75877"/>
+    <element xsi:type="archimate:FlowRelationship" name="Consent outcome" id="id-337f203aac314cd187e749eca9781b1c" source="id-4dca98d3142c4c9497283c0f5dc5e005" target="id-a928aac0958c4a0d875816a5e4a1da01"/>
+    <element xsi:type="archimate:FlowRelationship" name="Preference read" id="id-f34be9a110274c3c872350e46929a4c7" source="id-370a6bf301d444f5961903e5d7ce0b88" target="id-94181af3c3d646d4abab2c42a5a75877"/>
+    <element xsi:type="archimate:FlowRelationship" name="Read and write" id="id-2d3fc956fc4b4107beda53bccc33e8f7" source="id-94181af3c3d646d4abab2c42a5a75877" target="id-1dfa21a6f3ee410eac2d1028970484f4"/>
+    <element xsi:type="archimate:FlowRelationship" name="Persist receipt" id="id-e9a1df8e1a4448b3824f9cc2a7d8230d" source="id-a928aac0958c4a0d875816a5e4a1da01" target="id-1dfa21a6f3ee410eac2d1028970484f4"/>
+    <element xsi:type="archimate:AccessRelationship" id="id-43a404ac88264a489378b299dda5c79a" source="id-1dfa21a6f3ee410eac2d1028970484f4" target="id-5c5eb6132d504a7884f4bcddf1ca10d9"/>
+    <element xsi:type="archimate:AccessRelationship" id="id-8d56051e86fe491eb933301fa9d0ad16" source="id-1dfa21a6f3ee410eac2d1028970484f4" target="id-9106267194a54aa2be659f23c0f57a0b"/>
+    <element xsi:type="archimate:ServingRelationship" name="Identity resolution" id="id-3ae31a51c2f449ec8c4a6992556b73cb" source="id-d702edaa2e774c898a889a0f1a558d63" target="id-94181af3c3d646d4abab2c42a5a75877"/>
+    <element xsi:type="archimate:FlowRelationship" name="ETL (batch)" id="id-19177ed3e6d14395bdd4f7c06abcf93b" source="id-1dfa21a6f3ee410eac2d1028970484f4" target="id-85e09eb6a88748b0a2fe8bdb18b36100"/>
+    <element xsi:type="archimate:FlowRelationship" name="Self-service" id="id-a2bd8a330fb44dbc92511c3c90f761ab" source="id-510f0dfbc2584b5d859751e9477e7a2f" target="id-0495e974215149239cda8526a1f59e5d"/>
+    <element xsi:type="archimate:FlowRelationship" name="Update preferences link" id="id-a839b3f5d2194aaa85ec81067f7a3079" source="id-370a6bf301d444f5961903e5d7ce0b88" target="id-0495e974215149239cda8526a1f59e5d"/>
+    <element xsi:type="archimate:FlowRelationship" name="Token request" id="id-6829006a49114d2ab00d709d653bf359" source="id-0495e974215149239cda8526a1f59e5d" target="id-3cc9143e41bc4bf899522e18aa6d0c3f"/>
+    <element xsi:type="archimate:ServingRelationship" name="Scoped access" id="id-ac6813e350dd4b5da0624972d1e7b4fe" source="id-3cc9143e41bc4bf899522e18aa6d0c3f" target="id-94181af3c3d646d4abab2c42a5a75877"/>
+    <element xsi:type="archimate:FlowRelationship" name="Preference update" id="id-04f8dad13c734a98abb597dce249e73d" source="id-0495e974215149239cda8526a1f59e5d" target="id-94181af3c3d646d4abab2c42a5a75877"/>
+    <element xsi:type="archimate:AccessRelationship" id="id-1389ab3f41c04530afb2b559f3ab88d4" source="id-1dfa21a6f3ee410eac2d1028970484f4" target="id-cae2d0d87489435d9557292f04184410"/>
+  </folder>
+  <folder name="Views" id="id-894ef5e4e34f431fa2c416ea3ea0769a" type="diagrams">
+    <element xsi:type="archimate:ArchimateDiagramModel" name="L1 — Phase 1: API-only preference management" id="id-6d89fa7865c54b4db2d1f4d3c9e37c6e">
+      <child xsi:type="archimate:DiagramObject" id="id-240704024af04bce859c63c001e1549f" fontColor="#1F3864" fillColor="#FFCC99" archimateElement="id-ad240338b96340ffa089772a37720f2f">
+        <bounds x="264" y="24" width="180" height="55"/>
+      </child>
+      <child xsi:type="archimate:DiagramObject" id="id-8f51147a6240477e9af2f015a0bcf95f" fontColor="#1F3864" textAlignment="1" fillColor="#E8F8F8" archimateElement="id-9a4624fe4a314103b3b02ebfbde67952">
+        <bounds x="24" y="110" width="200" height="290"/>
+        <child xsi:type="archimate:DiagramObject" id="id-d1846dbc0888446d9819dc75ebf92f30" fontColor="#1F3864" fillColor="#FFFFCC" archimateElement="id-510f0dfbc2584b5d859751e9477e7a2f">
+          <bounds x="20" y="50" width="160" height="55"/>
+          <sourceConnection xsi:type="archimate:Connection" id="id-8f63857d09b042dd871cbe3cbee73ead" source="id-d1846dbc0888446d9819dc75ebf92f30" target="id-b5209279097a4085bff55b8a7d117815" archimateRelationship="id-0e354520af7e48249558b38da010cc28"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="id-f0734c3cb6ce4ba589ee57ef02005c25" fontColor="#1F3864" fillColor="#FFFFCC" archimateElement="id-4dca98d3142c4c9497283c0f5dc5e005">
+          <bounds x="20" y="125" width="160" height="55"/>
+          <sourceConnection xsi:type="archimate:Connection" id="id-53f07e73929e42109067bc1f6cf5ea0c" source="id-f0734c3cb6ce4ba589ee57ef02005c25" target="id-407347f940c34e56955a667e3dfcb91b" archimateRelationship="id-337f203aac314cd187e749eca9781b1c"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="id-a1c6e4d67d2545128989e69402e0310a" fontColor="#1F3864" fillColor="#FFFFCC" archimateElement="id-370a6bf301d444f5961903e5d7ce0b88">
+          <bounds x="20" y="200" width="160" height="55"/>
+          <sourceConnection xsi:type="archimate:Connection" id="id-025aa97c7bc04518bc66e9273a62ac13" source="id-a1c6e4d67d2545128989e69402e0310a" target="id-b5209279097a4085bff55b8a7d117815" archimateRelationship="id-f34be9a110274c3c872350e46929a4c7"/>
+        </child>
+      </child>
+      <child xsi:type="archimate:DiagramObject" id="id-1db019c40beb46ed931905a4315b0e2c" fontColor="#1F3864" textAlignment="1" fillColor="#E8F8F8" archimateElement="id-f8a81d134a3e48f98d9603d3421137d0">
+        <bounds x="264" y="110" width="200" height="290"/>
+        <child xsi:type="archimate:DiagramObject" id="id-b5209279097a4085bff55b8a7d117815" targetConnections="id-8f63857d09b042dd871cbe3cbee73ead id-025aa97c7bc04518bc66e9273a62ac13 id-8f39a160a23a40abadeb4c1224677879" fontColor="#1F3864" fillColor="#CCFFCC" archimateElement="id-94181af3c3d646d4abab2c42a5a75877">
+          <bounds x="20" y="60" width="160" height="55"/>
+          <sourceConnection xsi:type="archimate:Connection" id="id-598039ec2d1f406986cf4d75f92c79e0" source="id-b5209279097a4085bff55b8a7d117815" target="id-3d2dba2901c649e98d497c1c7fbb1640" archimateRelationship="id-2d3fc956fc4b4107beda53bccc33e8f7"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="id-407347f940c34e56955a667e3dfcb91b" targetConnections="id-53f07e73929e42109067bc1f6cf5ea0c" fontColor="#1F3864" fillColor="#CCFFFF" archimateElement="id-a928aac0958c4a0d875816a5e4a1da01">
+          <bounds x="20" y="165" width="160" height="55"/>
+          <sourceConnection xsi:type="archimate:Connection" id="id-ebc9d1671a474d2e9ac5751b7d5aac87" source="id-407347f940c34e56955a667e3dfcb91b" target="id-3d2dba2901c649e98d497c1c7fbb1640" archimateRelationship="id-e9a1df8e1a4448b3824f9cc2a7d8230d"/>
+        </child>
+      </child>
+      <child xsi:type="archimate:DiagramObject" id="id-3519422f332b42e4bc5ca28c28ef08f5" fontColor="#1F3864" textAlignment="1" fillColor="#E8F8F8" archimateElement="id-42d8afd459e548a997db20059c0c71fe">
+        <bounds x="504" y="110" width="220" height="290"/>
+        <child xsi:type="archimate:DiagramObject" id="id-3d2dba2901c649e98d497c1c7fbb1640" targetConnections="id-598039ec2d1f406986cf4d75f92c79e0 id-ebc9d1671a474d2e9ac5751b7d5aac87" fontColor="#1F3864" fillColor="#CCFFFF" archimateElement="id-1dfa21a6f3ee410eac2d1028970484f4">
+          <bounds x="20" y="50" width="180" height="55"/>
+          <sourceConnection xsi:type="archimate:Connection" id="id-99563dc4793244b08cc9a2faa61863a8" source="id-3d2dba2901c649e98d497c1c7fbb1640" target="id-bcb192c3e2204e6cb3503111a84c2e1e" archimateRelationship="id-43a404ac88264a489378b299dda5c79a"/>
+          <sourceConnection xsi:type="archimate:Connection" id="id-5c26c0d127db4e5d8ccd2ca317e2548a" source="id-3d2dba2901c649e98d497c1c7fbb1640" target="id-651b49b204b34ac0b745a5f2f0dbbba4" archimateRelationship="id-8d56051e86fe491eb933301fa9d0ad16"/>
+          <sourceConnection xsi:type="archimate:Connection" id="id-479cd3734fd341c7beaf8e60ebac71a9" source="id-3d2dba2901c649e98d497c1c7fbb1640" target="id-95b4f82d12144c45a496e54f436cadc9" archimateRelationship="id-19177ed3e6d14395bdd4f7c06abcf93b"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="id-bcb192c3e2204e6cb3503111a84c2e1e" targetConnections="id-99563dc4793244b08cc9a2faa61863a8" fontColor="#1F3864" fillColor="#CCFFFF" archimateElement="id-5c5eb6132d504a7884f4bcddf1ca10d9">
+          <bounds x="20" y="125" width="180" height="55"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="id-651b49b204b34ac0b745a5f2f0dbbba4" targetConnections="id-5c26c0d127db4e5d8ccd2ca317e2548a" fontColor="#1F3864" fillColor="#CCFFCC" archimateElement="id-9106267194a54aa2be659f23c0f57a0b">
+          <bounds x="20" y="200" width="180" height="55"/>
+        </child>
+      </child>
+      <child xsi:type="archimate:DiagramObject" id="id-619b06d9759b4e6797ecf5bdf6a66d4c" fontColor="#1F3864" fillColor="#CCFFFF" archimateElement="id-d702edaa2e774c898a889a0f1a558d63">
+        <bounds x="504" y="430" width="220" height="55"/>
+        <sourceConnection xsi:type="archimate:Connection" id="id-8f39a160a23a40abadeb4c1224677879" source="id-619b06d9759b4e6797ecf5bdf6a66d4c" target="id-b5209279097a4085bff55b8a7d117815" archimateRelationship="id-3ae31a51c2f449ec8c4a6992556b73cb"/>
+      </child>
+      <child xsi:type="archimate:DiagramObject" id="id-95b4f82d12144c45a496e54f436cadc9" targetConnections="id-479cd3734fd341c7beaf8e60ebac71a9" fontColor="#1F3864" fillColor="#CCFFFF" archimateElement="id-85e09eb6a88748b0a2fe8bdb18b36100">
+        <bounds x="264" y="430" width="200" height="55"/>
+      </child>
+      <documentation>Minimum viable interim path for removing OneTrust. No customer-facing UI and no new SaaS. All preference reads and writes route through the integration layer into EODS as system of record.</documentation>
+    </element>
+    <element xsi:type="archimate:ArchimateDiagramModel" name="L1 — Phase 2: Sitecore-hosted preference center" id="id-8937c06e86244f5db20f146ca7c856f5">
+      <child xsi:type="archimate:DiagramObject" id="id-7f145d2ae8ee4061b139a9bdda284eed" fontColor="#1F3864" fillColor="#FFCC99" archimateElement="id-ad240338b96340ffa089772a37720f2f">
+        <bounds x="264" y="24" width="180" height="55"/>
+      </child>
+      <child xsi:type="archimate:DiagramObject" id="id-ac40221e678041f2a3ad4cfcf95f4eb8" fontColor="#1F3864" textAlignment="1" fillColor="#E8F8F8" archimateElement="id-9a4624fe4a314103b3b02ebfbde67952">
+        <bounds x="24" y="110" width="200" height="365"/>
+        <child xsi:type="archimate:DiagramObject" id="id-dad74bfdfd2a4aeaab5ba2f8285edf87" fontColor="#1F3864" fillColor="#FFFFCC" archimateElement="id-510f0dfbc2584b5d859751e9477e7a2f">
+          <bounds x="20" y="50" width="160" height="55"/>
+          <sourceConnection xsi:type="archimate:Connection" id="id-2d70fc841ea648ad82a8ab5c69b83fb0" source="id-dad74bfdfd2a4aeaab5ba2f8285edf87" target="id-41ffcea5e43349b38d54b62ff322fb04" archimateRelationship="id-a2bd8a330fb44dbc92511c3c90f761ab"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="id-41ffcea5e43349b38d54b62ff322fb04" targetConnections="id-2d70fc841ea648ad82a8ab5c69b83fb0 id-e926d9d82af6403892bc758d7e1122df" fontColor="#1F3864" fillColor="#FFCCCC" archimateElement="id-0495e974215149239cda8526a1f59e5d">
+          <bounds x="20" y="125" width="160" height="55"/>
+          <sourceConnection xsi:type="archimate:Connection" id="id-fea19ecc32054b7daa5ba9d58df19a0b" source="id-41ffcea5e43349b38d54b62ff322fb04" target="id-f70e9aeabae64487bb3fdcf2601422ae" archimateRelationship="id-6829006a49114d2ab00d709d653bf359"/>
+          <sourceConnection xsi:type="archimate:Connection" id="id-f76cf3c034524dd48f12278d0764be65" source="id-41ffcea5e43349b38d54b62ff322fb04" target="id-723d5ff84add4c3a83f4a514da12b45a" archimateRelationship="id-04f8dad13c734a98abb597dce249e73d"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="id-c44e488e95a4476690dfe417caf4f043" fontColor="#1F3864" fillColor="#FFFFCC" archimateElement="id-4dca98d3142c4c9497283c0f5dc5e005">
+          <bounds x="20" y="200" width="160" height="55"/>
+          <sourceConnection xsi:type="archimate:Connection" id="id-d473fa4c5a974c7e906a2205da8d6b95" source="id-c44e488e95a4476690dfe417caf4f043" target="id-72e1f4769e0342a1b2fe1692f007829e" archimateRelationship="id-337f203aac314cd187e749eca9781b1c"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="id-72ab04754d604f40a3f40d140d0a2a6a" fontColor="#1F3864" fillColor="#FFFFCC" archimateElement="id-370a6bf301d444f5961903e5d7ce0b88">
+          <bounds x="20" y="275" width="160" height="55"/>
+          <sourceConnection xsi:type="archimate:Connection" id="id-e926d9d82af6403892bc758d7e1122df" source="id-72ab04754d604f40a3f40d140d0a2a6a" target="id-41ffcea5e43349b38d54b62ff322fb04" archimateRelationship="id-a839b3f5d2194aaa85ec81067f7a3079"/>
+          <sourceConnection xsi:type="archimate:Connection" id="id-03059f9c3c374c6d9ec9997169f7797f" source="id-72ab04754d604f40a3f40d140d0a2a6a" target="id-723d5ff84add4c3a83f4a514da12b45a" archimateRelationship="id-f34be9a110274c3c872350e46929a4c7"/>
+        </child>
+      </child>
+      <child xsi:type="archimate:DiagramObject" id="id-7fd06b24cd9f4d2bba9c9ce8cf77a369" fontColor="#1F3864" textAlignment="1" fillColor="#E8F8F8" archimateElement="id-f8a81d134a3e48f98d9603d3421137d0">
+        <bounds x="264" y="110" width="200" height="365"/>
+        <child xsi:type="archimate:DiagramObject" id="id-f70e9aeabae64487bb3fdcf2601422ae" targetConnections="id-fea19ecc32054b7daa5ba9d58df19a0b" fontColor="#1F3864" fillColor="#FFCCCC" archimateElement="id-3cc9143e41bc4bf899522e18aa6d0c3f">
+          <bounds x="20" y="50" width="160" height="55"/>
+          <sourceConnection xsi:type="archimate:Connection" id="id-f640cdd49f9d437b97e4b569545ad2b5" source="id-f70e9aeabae64487bb3fdcf2601422ae" target="id-723d5ff84add4c3a83f4a514da12b45a" archimateRelationship="id-ac6813e350dd4b5da0624972d1e7b4fe"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="id-723d5ff84add4c3a83f4a514da12b45a" targetConnections="id-f640cdd49f9d437b97e4b569545ad2b5 id-f76cf3c034524dd48f12278d0764be65 id-03059f9c3c374c6d9ec9997169f7797f id-62cf3291e693431d942a1984be5f054a" fontColor="#1F3864" fillColor="#CCFFCC" archimateElement="id-94181af3c3d646d4abab2c42a5a75877">
+          <bounds x="20" y="155" width="160" height="55"/>
+          <sourceConnection xsi:type="archimate:Connection" id="id-e00f9ac52034415eb1c260d131b48cc8" source="id-723d5ff84add4c3a83f4a514da12b45a" target="id-95e2ae73b8e1469c88bd84afa1d33fc7" archimateRelationship="id-2d3fc956fc4b4107beda53bccc33e8f7"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="id-72e1f4769e0342a1b2fe1692f007829e" targetConnections="id-d473fa4c5a974c7e906a2205da8d6b95" fontColor="#1F3864" fillColor="#CCFFFF" archimateElement="id-a928aac0958c4a0d875816a5e4a1da01">
+          <bounds x="20" y="260" width="160" height="55"/>
+          <sourceConnection xsi:type="archimate:Connection" id="id-61f8028c4af342c38b9c4b7682252a18" source="id-72e1f4769e0342a1b2fe1692f007829e" target="id-95e2ae73b8e1469c88bd84afa1d33fc7" archimateRelationship="id-e9a1df8e1a4448b3824f9cc2a7d8230d"/>
+        </child>
+      </child>
+      <child xsi:type="archimate:DiagramObject" id="id-c460ecd3acd74c6096131d8d19198f07" fontColor="#1F3864" textAlignment="1" fillColor="#E8F8F8" archimateElement="id-42d8afd459e548a997db20059c0c71fe">
+        <bounds x="504" y="110" width="220" height="365"/>
+        <child xsi:type="archimate:DiagramObject" id="id-95e2ae73b8e1469c88bd84afa1d33fc7" targetConnections="id-e00f9ac52034415eb1c260d131b48cc8 id-61f8028c4af342c38b9c4b7682252a18" fontColor="#1F3864" fillColor="#CCFFFF" archimateElement="id-1dfa21a6f3ee410eac2d1028970484f4">
+          <bounds x="20" y="50" width="180" height="55"/>
+          <sourceConnection xsi:type="archimate:Connection" id="id-d0f352326724429195a9cd5bf3ce740b" source="id-95e2ae73b8e1469c88bd84afa1d33fc7" target="id-40c50737be8b4cbcb59572ddf604889f" archimateRelationship="id-43a404ac88264a489378b299dda5c79a"/>
+          <sourceConnection xsi:type="archimate:Connection" id="id-f01c86745c3a495ebb47b6bf3fd03d78" source="id-95e2ae73b8e1469c88bd84afa1d33fc7" target="id-7e458995526448c6b771a17180dcdab5" archimateRelationship="id-8d56051e86fe491eb933301fa9d0ad16"/>
+          <sourceConnection xsi:type="archimate:Connection" id="id-d7a7bf126118438aaa87ca17c4837e99" source="id-95e2ae73b8e1469c88bd84afa1d33fc7" target="id-7f126372ca3e43818c0115ff96210c18" archimateRelationship="id-1389ab3f41c04530afb2b559f3ab88d4"/>
+          <sourceConnection xsi:type="archimate:Connection" id="id-e94b8ab7b112458dbfeb42ffd83dd901" source="id-95e2ae73b8e1469c88bd84afa1d33fc7" target="id-61df89e20cf848c382181b5643c3e7be" archimateRelationship="id-19177ed3e6d14395bdd4f7c06abcf93b"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="id-40c50737be8b4cbcb59572ddf604889f" targetConnections="id-d0f352326724429195a9cd5bf3ce740b" fontColor="#1F3864" fillColor="#CCFFFF" archimateElement="id-5c5eb6132d504a7884f4bcddf1ca10d9">
+          <bounds x="20" y="125" width="180" height="55"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="id-7e458995526448c6b771a17180dcdab5" targetConnections="id-f01c86745c3a495ebb47b6bf3fd03d78" fontColor="#1F3864" fillColor="#CCFFCC" archimateElement="id-9106267194a54aa2be659f23c0f57a0b">
+          <bounds x="20" y="200" width="180" height="55"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="id-7f126372ca3e43818c0115ff96210c18" targetConnections="id-d7a7bf126118438aaa87ca17c4837e99" fontColor="#1F3864" fillColor="#FFCCCC" archimateElement="id-cae2d0d87489435d9557292f04184410">
+          <bounds x="20" y="275" width="180" height="55"/>
+        </child>
+      </child>
+      <child xsi:type="archimate:DiagramObject" id="id-c293a4286dc04da6978455c78ebd6e94" fontColor="#1F3864" fillColor="#CCFFFF" archimateElement="id-d702edaa2e774c898a889a0f1a558d63">
+        <bounds x="504" y="505" width="220" height="55"/>
+        <sourceConnection xsi:type="archimate:Connection" id="id-62cf3291e693431d942a1984be5f054a" source="id-c293a4286dc04da6978455c78ebd6e94" target="id-723d5ff84add4c3a83f4a514da12b45a" archimateRelationship="id-3ae31a51c2f449ec8c4a6992556b73cb"/>
+      </child>
+      <child xsi:type="archimate:DiagramObject" id="id-61df89e20cf848c382181b5643c3e7be" targetConnections="id-e94b8ab7b112458dbfeb42ffd83dd901" fontColor="#1F3864" fillColor="#CCFFFF" archimateElement="id-85e09eb6a88748b0a2fe8bdb18b36100">
+        <bounds x="264" y="505" width="200" height="55"/>
+      </child>
+      <documentation>Adds customer self-service through an authenticated or tokenised preference portal. Same logical skeleton as Phase 1 plus a customer surface, token issuance and a token and audit holding.</documentation>
+    </element>
+  </folder>
+  <purpose>Level 1 logical views for the consent and preference management interim transition. Two options: Phase 1 (API-only, no customer-facing UI) and Phase 2 (Sitecore-hosted preference center with self-service). Derived from CX_Hub_C_P_Interim_Transition_Options.pdf, 3 August 2026.</purpose>
 </archimate:model>
